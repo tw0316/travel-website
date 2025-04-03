@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
 
           {/* Call to Action Button with Animation */}
           <a
-            href="#enquiry"
+            href="enquiry"
             className="inline-block bg-gradient-to-r from-blue-400 to-purple-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gradient-to-r hover:from-yellow-400 hover:to-red-500 transition-all duration-300 opacity-0 animate__animated animate__fadeIn animate__delay-4s"
           >
             Enquire Now
