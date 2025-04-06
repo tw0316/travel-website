@@ -14,9 +14,13 @@ app.use(cors());
 
 // PostgreSQL connection configuration
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL, // e.g., postgres://username:password@host:port/database
+  host: process.env.PG_HOST,
+  user: process.env.PG_USER,
+  password: process.env.PG_PASSWORD,
+  database: process.env.PG_DATABASE,
+  port: process.env.PG_PORT || 5432,
   ssl: {
-    rejectUnauthorized: false, // use this only if required (e.g., in production with Heroku)
+    rejectUnauthorized: false, // Keep this if required for AWS RDS
   },
 });
 

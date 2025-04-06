@@ -35,10 +35,25 @@ const EnquiryForm: React.FC = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted", formData);
-    // You can send data to an API here
+    try {
+      const res = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+  
+      const result = await res.json();
+      if (res.ok) {
+        alert("Inquiry submitted successfully!");
+      } else {
+        alert("Failed to submit inquiry.");
+      }
+    } catch (error) {
+      console.error("Submit error:", error);
+      alert("An error occurred.");
+    }
   };
 
   return (
