@@ -82,3 +82,4 @@ const NavItem: React.FC<NavItemProps> = ({ href, text, onClick }) => (
 );
 
 export default Navbar;
+//update name

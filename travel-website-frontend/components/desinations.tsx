@@ -84,3 +84,4 @@ const Destinations: React.FC = () => {
 };
 
 export default Destinations;
+//update name
